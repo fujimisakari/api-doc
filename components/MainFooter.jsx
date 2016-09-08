@@ -31,8 +31,7 @@ const MainFooter = () => (
     rounded={false}
     style={styles.main}
     zDepth={1}
-  >
-  </Paper>
+  />
 );
 
 // <p style={styles.p}>

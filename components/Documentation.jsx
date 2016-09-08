@@ -66,7 +66,7 @@ class Documentation extends Component {
         description: 'Name of channel to create' },
     ];
 
-    const text = '{\"aaa\":\"ccc\", \"bbb\":[{\"ddd\":1,\"eee\":2},{\"ddd\":3,\"eee\":4}]}';
+    const text = '{"aaa":"ccc", "bbb":[{"ddd":1,"eee":2},{"ddd":3,"eee":4}]}';
     const jsonBefore = JSON.parse(text);
     const json = JSON.stringify(jsonBefore, null, '    ');
 
