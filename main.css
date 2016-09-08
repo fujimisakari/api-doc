@@ -1,0 +1,60 @@
+html {
+    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: 0px;
+}
+
+code {
+  background: #f8f8f8;
+  border-radius: .2rem;
+  border: 1px solid #E8E8E8;
+  color: #c25;
+  font-size: 14px;
+  font-variant-ligatures: none;
+  padding: 1px 3px;
+  white-space: normal;
+}
+
+pre {
+  background: #f8f8f8;
+  border-radius: .2rem;
+  border: 1px solid #E8E8E8;
+  font-size: inherit;
+  padding: 10px 20px;
+  white-space: pre;
+}
+
+.naviList button {
+  padding: 2px 12px 12px 12px !important;
+}
+
+#topicPath {
+  font-size: 20px;
+  line-height: 18px;
+}
+
+#topicPath ol li {
+  display: inline-block;
+  list-style: none;
+}
+
+#topicPath ol li:before {
+  font-size: 18px;
+  color: #9E9E9E;
+  width: 10px;
+  height: 14px;
+  vertical-align: 1px;
+  display: inline-block;
+  content: " > ";
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#topicPath ol li:first-child:before {
+  content: none;
+  margin-left: 0;
+}
