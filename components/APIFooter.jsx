@@ -1,30 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import { colors } from 'material-ui/styles';
 
-const styles = {
-  footer: {
-    backgroundColor: '#545454',
-    color: '#fff',
-    display: 'flex',
-    height: '120px',
-    position: 'relative',
-    textAlign: 'center',
-    width: '100%',
-    zIndex: 1000,
-  },
-  a: {
-    color: colors.darkWhite,
-  },
-  p: {
-    margin: '0 auto',
-    padding: '50px 0',
-    color: colors.lightWhite,
-  },
-  iconButton: {
-    color: colors.darkWhite,
-  },
-};
+import { apiFooterStyles as styles } from '../styles';
 
 const APIFooter = () => (
   <Paper

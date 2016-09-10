@@ -1,55 +1,29 @@
 import React, { Component } from 'react';
-import { colors } from 'material-ui/styles';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
+import { apiDocumentationStyles } from '../styles';
 import { SERVER_DOMAIN } from '../constants';
 
 
-class Documentation extends Component {
+class APIDocumentation extends Component {
 
   getStyles() {
-    const styles = {
-      main: {
-        padding: '0 20px',
-      },
-      headline: {
-        fontSize: 24,
-        margin: '35px 0 12px 0',
-        fontWeight: 400,
-      },
-      tableRow: {
-        borderBottom: '2px solid',
-        borderColor: colors.deepPurpleA200,
-      },
-      baseHeaderColumn: {
-        color: colors.darkBlack,
-        fontSize: 18,
-        fontWeight: 500,
-        textAlign: 'left',
-      },
-      baseRowColumn: {
-        fontSize: 15,
-        whiteSpace: 'normal',
-        textOverflow: 'clip',
-      },
-    };
-
     const argumentStyle = { width: '15%', padding: '0 15px' };
     const exampleStyle = { width: '20%', padding: '0 15px' };
     const requiredStyle = { width: '15%', padding: '0 15px' };
     const descriptionStyle = { width: '60%', padding: '0 15px' };
 
-    styles.argumentHeader = Object.assign({}, styles.baseHeaderColumn, argumentStyle);
-    styles.exampleHeader = Object.assign({}, styles.baseHeaderColumn, exampleStyle);
-    styles.requiredHeader = Object.assign({}, styles.baseHeaderColumn, requiredStyle);
-    styles.descriptionHeader = Object.assign({}, styles.baseHeaderColumn, descriptionStyle);
+    apiDocumentationStyles.argumentHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, argumentStyle);
+    apiDocumentationStyles.exampleHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, exampleStyle);
+    apiDocumentationStyles.requiredHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, requiredStyle);
+    apiDocumentationStyles.descriptionHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, descriptionStyle);
 
-    styles.argumentRow = Object.assign({}, styles.baseRowColumn, argumentStyle);
-    styles.exampleRow = Object.assign({}, styles.baseRowColumn, exampleStyle);
-    styles.requiredRow = Object.assign({}, styles.baseRowColumn, requiredStyle);
-    styles.descriponRow = Object.assign({}, styles.baseRowColumn, descriptionStyle);
+    apiDocumentationStyles.argumentRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, argumentStyle);
+    apiDocumentationStyles.exampleRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, exampleStyle);
+    apiDocumentationStyles.requiredRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, requiredStyle);
+    apiDocumentationStyles.descriponRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, descriptionStyle);
 
-    return styles;
+    return apiDocumentationStyles;
   }
 
 
@@ -108,4 +82,4 @@ class Documentation extends Component {
   }
 }
 
-export default Documentation;
+export default APIDocumentation;

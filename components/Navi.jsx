@@ -1,7 +1,7 @@
 import React from 'react';
-import { fullWhite, grey300 } from 'material-ui/styles/colors';
 
 import NaviList from './NaviList';
+import { naviStyles as styles } from '../styles';
 
 export default class Navi extends React.Component {
 
@@ -11,20 +11,8 @@ export default class Navi extends React.Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: fullWhite,
-      width: '269px',
-      marginRight: '-270px',
-      borderRight: `1px solid ${grey300}`,
-      display: 'block',
-      float: 'left',
-      overflow: 'auto',
-      position: 'relative',
-      zIndex: 1500,
-    };
-
     return (
-      <div id="navi" style={style}>
+      <div id="navi" style={styles.frame}>
         <NaviList />
       </div>
     );

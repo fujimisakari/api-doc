@@ -1,15 +1,6 @@
 import React from 'react';
 
-const styles = {
-  main: {
-    padding: '0 20px',
-  },
-  headline: {
-    fontSize: 24,
-    marginBottom: 12,
-    fontWeight: 400,
-  },
-};
+import { apiTesterStyles as styles } from '../styles';
 
 const Tester = () => (
   <div style={styles.main}>

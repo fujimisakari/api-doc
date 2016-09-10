@@ -3,32 +3,7 @@ import { Link } from 'react-router';
 import Subheader from 'material-ui/Subheader';
 import { List, ListItem } from 'material-ui/List';
 
-const styles = {
-  groupStyle: {
-    marginBottom: '15px',
-  },
-  parentList: {
-    fontSize: '14px',
-    paddingLeft: 15,
-    // height: '38px',
-    // lineHeight: '38px',
-  },
-  childList: {
-    paddingLeft: 15,
-    fontSize: '13px',
-  },
-  innerDivStyle: {
-    padding: '10px',
-  },
-  subHeaderStyle: {
-    padding: '0 25px',
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: '#333',
-    height: '38px',
-    lineHeight: '38px',
-  },
-};
+import { naviListStyles as styles } from '../styles';
 
 const isRounded = true;
 
@@ -41,7 +16,6 @@ const NaviList = () => (
             style={styles.parentList}
             primaryText="Get Started"
             innerDivStyle={styles.innerDivStyle}
-            href="#/get-started"
           />
         </Link>
         <ListItem

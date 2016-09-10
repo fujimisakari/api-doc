@@ -2,61 +2,28 @@ import React, { Component, PropTypes } from 'react';
 
 import Paper from 'material-ui/Paper';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import { colors } from 'material-ui/styles';
 
-import { DOCUMENTATION, TESTER } from '../constants';
 import APIDocumentation from './APIDocumentation';
 import APITester from './APITester';
+import { apiContentStyles } from '../styles';
+import { DOCUMENTATION, TESTER } from '../constants';
 
 class APIContent extends Component {
 
   getStyles(props) {
-    const styles = {
-      frame: {
-        margin: '40px auto',
-        textAlign: 'left',
-        width: '78%',
-        minWidth: '650px',
-      },
-      title: {
-        fontSize: '40px',
-        lineHeight: '50px',
-        marginTop: '-5px',
-        marginBottom: '25px',
-        color: '#333',
-        fontWeight: 'normal',
-        fontFamily: 'Roboto light,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif',
-      },
-      desc: {
-        fontSize: '18px',
-        lineHeight: '30px',
-        marginTop: '-6px',
-        fontFamily: 'Roboto light,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif',
-      },
-      document: {
-        paddingBottom: '35px',
-      },
-      active: {
-        backgroundColor: colors.grey700,
-      },
-      inactive: {
-        backgroundColor: colors.grey500,
-      },
-    };
-
     if (props.tabType === DOCUMENTATION) {
-      styles.documentation = styles.active;
-      styles.tester = styles.tester;
+      apiContentStyles.documentation = apiContentStyles.active;
+      apiContentStyles.tester = apiContentStyles.tester;
     } else if (props.tabType === TESTER) {
-      styles.documentation = styles.tester;
-      styles.tester = styles.active;
+      apiContentStyles.documentation = apiContentStyles.tester;
+      apiContentStyles.tester = apiContentStyles.active;
     }
-
-    return styles;
+    return apiContentStyles;
   }
 
   render() {
     const styles = this.getStyles(this.props);
+
     return (
       <div id="mainCotent" style={styles.frame}>
         <h1 style={styles.title}>REST API reference</h1>
