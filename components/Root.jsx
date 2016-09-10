@@ -5,7 +5,7 @@ import AppBar from 'material-ui/AppBar';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { typography, colors } from 'material-ui/styles';
 
-import customRawTheme from '../customTheme';
+import customRawTheme from '../src/customTheme';
 import Navi from './Navi';
 import Main from './Main';
 

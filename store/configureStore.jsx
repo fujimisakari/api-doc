@@ -1,11 +1,15 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
 import rootReducer from '../reducers';
 
 export default function configureStore(initialState) {
   const store = createStore(
-    rootReducer,
-    initialState
+    combineReducers({
+      rootReducer,
+      initialState,
+      routing: routerReducer,
+    })
   );
   return store;
 }

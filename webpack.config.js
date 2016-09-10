@@ -3,9 +3,9 @@ const path = require('path');
 module.exports = {
   context: __dirname,
   entry: {
-    jsx: './index.jsx',
-    css: './main.css',
-    html: './index.html',
+    jsx: './src/index.jsx',
+    css: './src/main.css',
+    html: './src/index.html',
   },
 
   output: {
