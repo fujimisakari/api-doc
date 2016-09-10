@@ -9,7 +9,6 @@ import Root from '../components/Root';
 import API from '../components/API';
 import GetStarted from '../components/GetStarted';
 import configureStore from '../store/configureStore';
-/* global document */
 
 injectTapEventPlugin();
 

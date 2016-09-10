@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { colors } from 'material-ui/styles';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
-import { SERVER_DOMAIN } from '../constants/env';
+import { SERVER_DOMAIN } from '../constants';
 
 
 class Documentation extends Component {

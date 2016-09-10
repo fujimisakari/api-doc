@@ -1,4 +1,4 @@
-import { DOCUMENTATION, SET_TAB_TYPE } from '../constants/TabTypes';
+import { DOCUMENTATION, SET_TAB_TYPE } from '../constants';
 
 export default function tab(state, action) {
   switch (action.type) {

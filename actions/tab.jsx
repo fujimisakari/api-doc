@@ -1,4 +1,4 @@
-import { SET_TAB_TYPE } from '../constants/TabTypes';
+import { SET_TAB_TYPE } from '../constants';
 
 const setTabType = (tabType) => ({
   type: SET_TAB_TYPE,

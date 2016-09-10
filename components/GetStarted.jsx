@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import { colors } from 'material-ui/styles';
-
-
 class GetStarted extends Component {
 
   getStyles() {

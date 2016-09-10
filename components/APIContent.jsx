@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import { colors } from 'material-ui/styles';
 
-import { DOCUMENTATION, TESTER } from '../constants/TabTypes';
+import { DOCUMENTATION, TESTER } from '../constants';
 import APIDocumentation from './APIDocumentation';
 import APITester from './APITester';
 

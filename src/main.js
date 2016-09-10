@@ -1,11 +1,11 @@
 
 // For fixed Navigation and ContentHeader setting
-var navi = document.getElementById('navi');
-var head = document.getElementById('mainHead');
-var content = document.getElementById('mainCotent');
+const navi = document.getElementById('navi');
+const head = document.getElementById('mainHead');
+const content = document.getElementById('mainCotent');
 
 function windowLoad() {
-  navi.style.height = window.innerHeight + 'px';
+  navi.style.height = `${window.innerHeight}px`;
 }
 
 function scrollLoad() {
@@ -22,7 +22,7 @@ function scrollLoad() {
     navi.style.top = '';
     content.style.paddingTop = '';
   }
-};
+}
 
 windowLoad();
 scrollLoad();
