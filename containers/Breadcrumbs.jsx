@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import MainHead from '../components/MainHead';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const mapStateToProps = () => ({
   topics: ['member', 'member.id'],
@@ -13,4 +13,4 @@ function mapDispatchToProps() {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainHead);
+)(Breadcrumbs);

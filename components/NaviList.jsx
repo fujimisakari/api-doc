@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Subheader from 'material-ui/Subheader';
 import { List, ListItem } from 'material-ui/List';
 
@@ -35,11 +36,14 @@ const NaviList = () => (
   <div>
     <List>
       <div style={styles.groupStyle}>
-        <ListItem
-          style={styles.parentList}
-          primaryText="Get Started"
-          innerDivStyle={styles.innerDivStyle}
-        />
+        <Link to="/get-started">
+          <ListItem
+            style={styles.parentList}
+            primaryText="Get Started"
+            innerDivStyle={styles.innerDivStyle}
+            href="#/get-started"
+          />
+        </Link>
         <ListItem
           style={styles.parentList}
           primaryText="Overview"
@@ -54,36 +58,43 @@ const NaviList = () => (
         innerDivStyle={styles.innerDivStyle}
         className="naviList"
         nestedItems={[
-          <ListItem
-            style={styles.childList}
-            primaryText="Prerequisites"
-            value="/get-started/prerequisites"
-            innerDivStyle={styles.innerDivStyle}
-          />,
-          <ListItem
-            style={styles.childList}
-            primaryText="Installation"
-            value="/get-started/installation"
-            innerDivStyle={styles.innerDivStyle}
-          />,
-          <ListItem
-            style={styles.childList}
-            primaryText="Usage"
-            value="/get-started/usage"
-            innerDivStyle={styles.innerDivStyle}
-          />,
-          <ListItem
-            style={styles.childList}
-            primaryText="Server Rendering"
-            value="/get-started/server-rendering"
-            innerDivStyle={styles.innerDivStyle}
-          />,
-          <ListItem
-            style={styles.childList}
-            primaryText="Examples"
-            value="/get-started/examples"
-            innerDivStyle={styles.innerDivStyle}
-          />,
+          <Link to="/api">
+            <ListItem
+              style={styles.childList}
+              primaryText="api"
+              innerDivStyle={styles.innerDivStyle}
+            />
+          </Link>,
+          <Link to="/api">
+            <ListItem
+              style={styles.childList}
+              primaryText="Installation"
+              innerDivStyle={styles.innerDivStyle}
+            />
+          </Link>,
+          <Link to="/api">
+            <ListItem
+              style={styles.childList}
+              primaryText="Usage"
+              innerDivStyle={styles.innerDivStyle}
+            />
+          </Link>,
+          <Link to="/api">
+            <ListItem
+              style={styles.childList}
+              primaryText="Server Rendering"
+              href="#/api/server-rendering"
+              innerDivStyle={styles.innerDivStyle}
+            />
+          </Link>,
+          <Link to="/api">
+            <ListItem
+              style={styles.childList}
+              primaryText="Examples"
+              href="#/api/examples"
+              innerDivStyle={styles.innerDivStyle}
+            />
+          </Link>,
         ]}
       />
       <ListItem

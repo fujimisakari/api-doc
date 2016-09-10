@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import Paper from 'material-ui/Paper';
 import spacing from 'material-ui/styles/spacing';
 
-class MainHead extends Component {
+class Breadcrumbs extends Component {
 
   render() {
     const styles = {
@@ -37,8 +37,8 @@ class MainHead extends Component {
   }
 }
 
-MainHead.propTypes = {
+Breadcrumbs.propTypes = {
   topics: PropTypes.array.isRequired,
 };
 
-export default MainHead;
+export default Breadcrumbs;

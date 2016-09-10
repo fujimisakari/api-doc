@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper';
 import { colors } from 'material-ui/styles';
 
 const styles = {
-  main: {
+  footer: {
     backgroundColor: '#545454',
     color: '#fff',
     display: 'flex',
@@ -26,10 +26,10 @@ const styles = {
   },
 };
 
-const MainFooter = () => (
+const APIFooter = () => (
   <Paper
     rounded={false}
-    style={styles.main}
+    style={styles.footer}
     zDepth={1}
   />
 );
@@ -44,4 +44,4 @@ const MainFooter = () => (
 //   </a>.
 // </p>
 
-export default MainFooter;
+export default APIFooter;

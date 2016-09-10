@@ -1,11 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  context: __dirname,
+  context: path.join(__dirname, '/src'),
   entry: {
-    jsx: './src/index.jsx',
-    css: './src/main.css',
-    html: './src/index.html',
+    jsx: './index.jsx',
+    html: './index.html',
+    css: './main.css',
+    js: './main.js',
   },
 
   output: {

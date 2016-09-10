@@ -7,7 +7,7 @@ import { typography, colors } from 'material-ui/styles';
 
 import customRawTheme from '../src/customTheme';
 import Navi from './Navi';
-import Main from './Main';
+import Breadcrumbs from '../containers/Breadcrumbs';
 
 
 class Root extends Component {
@@ -26,6 +26,11 @@ class Root extends Component {
         fontSize: 24,
         color: typography.textFullWhite,
         fontWeight: typography.fontWeightLight,
+      },
+      contents: {
+        // float: 'right',
+        marginLeft: '270px',
+        backgroundColor: '#f8f8f8',
       },
     };
     return styles;
@@ -48,12 +53,19 @@ class Root extends Component {
         </header>
         <div id="wrapper">
           <Navi />
-          <Main />
+          <div style={styles.contents}>
+            <Breadcrumbs />
+            { this.props.children }
+          </div>
         </div>
       </div>
     );
   }
 }
+
+Root.propTypes = {
+  children: PropTypes.object,
+};
 
 Root.childContextTypes = {
   muiTheme: PropTypes.object.isRequired,

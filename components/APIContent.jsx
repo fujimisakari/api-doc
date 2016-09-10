@@ -5,10 +5,10 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import { colors } from 'material-ui/styles';
 
 import { DOCUMENTATION, TESTER } from '../constants/TabTypes';
-import Documentation from './Documentation';
-import Tester from './Tester';
+import APIDocumentation from './APIDocumentation';
+import APITester from './APITester';
 
-class MainContent extends Component {
+class APIContent extends Component {
 
   getStyles(props) {
     const styles = {
@@ -67,10 +67,10 @@ class MainContent extends Component {
             onChange={this.props.onTypeChange}
           >
             <Tab style={styles.documentation} label="Documentation" value="DOCUMENTATION" >
-              <Documentation />
+              <APIDocumentation />
             </Tab>
             <Tab style={styles.tester} label="Tester" value="TESTER">
-              <Tester />
+              <APITester />
             </Tab>
           </Tabs>
         </Paper>
@@ -79,9 +79,9 @@ class MainContent extends Component {
   }
 }
 
-MainContent.propTypes = {
+APIContent.propTypes = {
   onTypeChange: PropTypes.func.isRequired,
   tabType: PropTypes.string.isRequired,
 };
 
-export default MainContent;
+export default APIContent;

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import setTabType from '../actions/tab';
-import MainContent from '../components/MainContent';
+import APIContent from '../components/APIContent';
 
 const mapStateToProps = (state) => ({
   tabType: state.tab,
@@ -18,4 +18,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainContent);
+)(APIContent);
