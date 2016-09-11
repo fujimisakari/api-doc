@@ -35,9 +35,8 @@ const stab = [
   },
 ];
 
-const mapStateToProps = (location) => ({
+const mapStateToProps = () => ({
   methodInfoList: stab,
-  loc: location.rootReducer.tab,
 });
 
 function mapDispatchToProps() {
