@@ -10,6 +10,7 @@ const isRounded = true;
 const NaviMenu = ({ methodInfoList, pathname }) => {
   const apiMethodList = methodInfoList.map(methodInfo => (
     <ListItem
+      key={methodInfo.methodGroup}
       style={styles.parentList}
       primaryText={methodInfo.methodGroup}
       primaryTogglesNestedList={isRounded}
@@ -19,6 +20,7 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
         methodInfo.methodItems.map(method =>
           <Link to={`/api/${method}`}>
             <ListItem
+              key={method}
               style={(pathname === `/api/${method}`) ? styles.activeChildList : styles.childList}
               primaryText={method}
               innerDivStyle={styles.innerDivStyle}
@@ -35,6 +37,7 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
         <div style={styles.groupStyle}>
           <Link to="/overview">
             <ListItem
+              key={'Overview'}
               style={(pathname === '/overview') ? styles.activeParentList : styles.parentList}
               primaryText="Overview"
               innerDivStyle={styles.innerDivStyle}

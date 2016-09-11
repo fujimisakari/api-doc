@@ -54,7 +54,7 @@ class APIDocumentation extends Component {
         <h2 style={styles.headline}>Arguments</h2>
         <Table>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-            <TableRow style={styles.tableRow}>
+            <TableRow key={'header'} style={styles.tableRow}>
               <TableHeaderColumn style={styles.argumentHeader}>Argument</TableHeaderColumn>
               <TableHeaderColumn style={styles.exampleHeader}>Example</TableHeaderColumn>
               <TableHeaderColumn style={styles.requiredHeader}>Required</TableHeaderColumn>
@@ -62,8 +62,8 @@ class APIDocumentation extends Component {
             </TableRow>
           </TableHeader>
           <TableBody displayRowCheckbox={false}>
-            {testDataList.map(data =>
-              <TableRow>
+            {testDataList.map((data, index) =>
+              <TableRow key={index}>
                 <TableRowColumn style={styles.argumentRow}><code>{data.argument}</code></TableRowColumn>
                 <TableRowColumn style={styles.exampleRow}><code>{data.example}</code></TableRowColumn>
                 <TableRowColumn style={styles.requiredRow}>{data.required}</TableRowColumn>

@@ -12,8 +12,8 @@ const Breadcrumbs = ({ topics }) => (
   >
     <div id="topicPath">
       <ol>
-        <li>Document</li>
-        {topics.map(topic => <li>{topic}</li>)}
+        <li key={'Document'}>Document</li>
+        {topics.map(topic => <li key={topic}>{topic}</li>)}
       </ol>
     </div>
   </Paper>
