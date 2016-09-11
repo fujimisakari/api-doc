@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import Root from '../components/Root';
 import API from '../components/API';
-import GetStarted from '../components/GetStarted';
+import Overview from '../components/Overview';
+import Root from '../containers/Root';
+
 import configureStore from '../store/configureStore';
 
 injectTapEventPlugin();
@@ -20,10 +21,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={Root}>
-        <IndexRoute component={GetStarted} />
-        <Route path="/get-started" component={GetStarted} />
-        <Route path="/api" component={API} />
-        <Route path="/api:method" component={API} />
+        <IndexRoute component={Overview} />
+        <Route path="/overview" component={Overview} />
+        <Route path="/api/*.*" component={API} />
       </Route>
     </Router>
   </Provider>,

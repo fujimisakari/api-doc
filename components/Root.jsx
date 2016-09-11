@@ -5,7 +5,7 @@ import Title from 'react-title-component';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Breadcrumbs from '../containers/Breadcrumbs';
-import Navi from './Navi';
+import NaviMenu from '../containers/NaviMenu';
 import customRawTheme from '../src/customTheme';
 import { rootStyles as styles } from '../styles';
 
@@ -29,7 +29,7 @@ class Root extends Component {
           />
         </header>
         <div id="wrapper">
-          <Navi />
+          <NaviMenu pathname={this.props.location.pathname} />
           <div style={styles.contents}>
             <Breadcrumbs />
             { this.props.children }
@@ -42,6 +42,7 @@ class Root extends Component {
 
 Root.propTypes = {
   children: PropTypes.object,
+  location: PropTypes.object,
 };
 
 Root.childContextTypes = {

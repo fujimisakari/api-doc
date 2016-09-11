@@ -6,7 +6,7 @@ import { apiFooterStyles as styles } from '../styles';
 const APIFooter = () => (
   <Paper
     rounded={false}
-    style={styles.footer}
+    style={styles.frame}
     zDepth={1}
   />
 );

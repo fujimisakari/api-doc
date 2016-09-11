@@ -7,7 +7,7 @@ const Breadcrumbs = ({ topics }) => (
   <Paper
     id="mainHead"
     rounded={false}
-    style={styles.main}
+    style={styles.frame}
     zDepth={1}
   >
     <div id="topicPath">

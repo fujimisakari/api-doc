@@ -8,6 +8,12 @@ body {
   margin: 0px;
 }
 
+a:-webkit-any-link {
+  color: -webkit-link;
+  text-decoration: none;
+  cursor: auto;
+}
+
 code {
   background: #f8f8f8;
   border-radius: .2rem;

@@ -45,7 +45,7 @@ class APIDocumentation extends Component {
     const json = JSON.stringify(jsonBefore, null, '    ');
 
     return (
-      <div style={styles.main}>
+      <div style={styles.frame}>
         <h2 style={styles.headline}>URL</h2>
         <p>
           This method has the URL <code>{SERVER_DOMAIN}/api/channels.join</code>

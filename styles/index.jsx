@@ -30,28 +30,35 @@ export const naviStyles = {
     position: 'relative',
     zIndex: 1500,
   },
-};
-
-export const naviListStyles = {
   groupStyle: {
     marginBottom: '15px',
   },
+  activeParentList: {
+    color: colors.deepPurpleA200,
+    fontWeight: 'bold',
+    fontSize: '14px',
+    paddingLeft: '15px',
+  },
   parentList: {
     fontSize: '14px',
-    paddingLeft: 15,
-    // height: '38px',
-    // lineHeight: '38px',
+    paddingLeft: '15px',
+  },
+  activeChildList: {
+    color: colors.deepPurpleA200,
+    fontWeight: 'bold',
+    paddingLeft: '30px',
+    fontSize: '14px',
   },
   childList: {
-    paddingLeft: 15,
-    fontSize: '13px',
+    paddingLeft: '30px',
+    fontSize: '14px',
   },
   innerDivStyle: {
     padding: '10px',
   },
   subHeaderStyle: {
     padding: '0 25px',
-    fontSize: 13,
+    fontSize: '13px',
     fontWeight: 'bold',
     color: '#333',
     height: '38px',
@@ -60,7 +67,7 @@ export const naviListStyles = {
 };
 
 export const breadcrumbsStyles = {
-  main: {
+  frame: {
     backgroundColor: '#545454',
     color: '#fff',
     display: 'flex',
@@ -107,7 +114,7 @@ export const apiContentStyles = {
 };
 
 export const apiDocumentationStyles = {
-  main: {
+  frame: {
     padding: '0 20px',
   },
   headline: {
@@ -133,7 +140,7 @@ export const apiDocumentationStyles = {
 };
 
 export const apiTesterStyles = {
-  main: {
+  frame: {
     padding: '0 20px',
   },
   headline: {
@@ -144,7 +151,7 @@ export const apiTesterStyles = {
 };
 
 export const apiFooterStyles = {
-  footer: {
+  frame: {
     backgroundColor: '#545454',
     color: '#fff',
     display: 'flex',
@@ -167,7 +174,7 @@ export const apiFooterStyles = {
   },
 };
 
-export const getStartedStyles = {
+export const overviewStyles = {
   frame: {
     margin: '40px auto',
     textAlign: 'left',
