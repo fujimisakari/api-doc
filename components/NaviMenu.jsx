@@ -14,7 +14,7 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
       primaryText={methodInfo.methodGroup}
       primaryTogglesNestedList={isRounded}
       innerDivStyle={styles.innerDivStyle}
-      className="naviList"
+      className="naviItemList"
       nestedItems={[
         methodInfo.methodItems.map(method =>
           <Link to={`/api/${method}`}>
@@ -30,7 +30,7 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
   ));
 
   return (
-    <div id="navi" style={styles.frame}>
+    <div id="naviMenu" style={styles.frame}>
       <List>
         <div style={styles.groupStyle}>
           <Link to="/overview">

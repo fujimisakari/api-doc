@@ -25,7 +25,7 @@ class APIContent extends Component {
     const styles = this.getStyles(this.props);
 
     return (
-      <div id="mainCotent" style={styles.frame}>
+      <div className="content" style={styles.frame}>
         <h1 style={styles.title}>REST API reference</h1>
         <p style={styles.desc}>REST APIs can be used from your application. This page explains how each API is called.</p>
         <Paper style={styles.document} zDepth={1}>

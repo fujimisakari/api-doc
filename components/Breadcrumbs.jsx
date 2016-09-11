@@ -5,7 +5,7 @@ import { breadcrumbsStyles as styles } from '../styles';
 
 const Breadcrumbs = ({ topics }) => (
   <Paper
-    id="mainHead"
+    id="breadcrumbs"
     rounded={false}
     style={styles.frame}
     zDepth={1}
