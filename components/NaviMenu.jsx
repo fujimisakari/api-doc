@@ -23,6 +23,12 @@ NestedListWrapper.propTypes = {
 };
 
 const NaviMenu = ({ methodInfoList, pathname }) => {
+  let methodGroupName = null;
+  const pathList = pathname.split('/');
+  if (pathList.length > 1 && pathList[1] === 'api') {
+    methodGroupName = pathList[2];
+  }
+
   const apiMethodList = methodInfoList.map(methodInfo => (
     <ListItem
       key={methodInfo.methodGroup}
@@ -30,12 +36,13 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
       primaryText={methodInfo.methodGroup}
       primaryTogglesNestedList={isRounded}
       innerDivStyle={styles.innerDivStyle}
+      initiallyOpen={methodInfo.methodGroup === methodGroupName}
       className="naviItemList"
       nestedItems={methodInfo.methodItems.map(method =>
         <NestedListWrapper key={method}>
-          <Link to={`/api/${method}`}>
+          <Link to={`/api/${methodInfo.methodGroup}/${method}`}>
             <ListItem
-              style={(pathname === `/api/${method}`) ? styles.activeChildList : styles.childList}
+              style={(pathname === `/api/${methodInfo.methodGroup}/${method}`) ? styles.activeChildList : styles.childList}
               primaryText={method}
               innerDivStyle={styles.innerDivStyle}
             />

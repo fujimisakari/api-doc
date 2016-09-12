@@ -23,7 +23,7 @@ ReactDOM.render(
       <Route path="/" component={Root}>
         <IndexRoute component={Overview} />
         <Route path="/overview" component={Overview} />
-        <Route path="/api/*.*" component={API} />
+        <Route path="/api/*/*" component={API} />
       </Route>
     </Router>
   </Provider>,
