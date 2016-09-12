@@ -31,7 +31,7 @@ class Root extends Component {
         <div id="wrapper">
           <NaviMenu pathname={this.props.location.pathname} />
           <div style={styles.contents}>
-            <Breadcrumbs />
+            <Breadcrumbs pathname={this.props.location.pathname} />
             { this.props.children }
           </div>
         </div>

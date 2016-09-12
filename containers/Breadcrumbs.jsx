@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 
 import Breadcrumbs from '../components/Breadcrumbs';
 
-const mapStateToProps = () => ({
-  topics: ['member', 'member.id'],
-});
+const mapStateToProps = () => (
+  {}
+);
 
 function mapDispatchToProps() {
   return {};
