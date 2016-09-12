@@ -2,9 +2,9 @@ import React from 'react';
 
 import { overviewStyles as styles } from '../styles';
 
-const Overview = () => (
+const GetStarted = () => (
   <div className="content" style={styles.frame}>
-    <h1 style={styles.title}>Overview</h1>
+    <h1 style={styles.title}>Get Started</h1>
     <p style={styles.desc}>
       Get started with REST APIs can be used from your application.
       This page explains how each API is called.
@@ -12,4 +12,4 @@ const Overview = () => (
   </div>
 );
 
-export default Overview;
+export default GetStarted;
