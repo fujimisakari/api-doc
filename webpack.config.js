@@ -22,9 +22,10 @@ module.exports = {
       { test: /\.html$/, loader: 'file?name=[name].[ext]' },
       { test: /\.css$/, loader: 'file?name=[name].[ext]' },
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] },
+      { test: /\.md$/, loader: 'raw-loader' },
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.md'],
   },
 };

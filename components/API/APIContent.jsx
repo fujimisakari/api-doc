@@ -5,8 +5,8 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 
 import APIDocumentation from './APIDocumentation';
 import APITester from './APITester';
-import { apiContentStyles } from '../styles';
-import { DOCUMENTATION, TESTER } from '../constants';
+import { apiContentStyles } from '../../styles';
+import { DOCUMENTATION, TESTER } from '../../constants';
 
 class APIContent extends Component {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { apiTesterStyles as styles } from '../styles';
+import { apiTesterStyles as styles } from '../../styles';
 
 const Tester = () => (
   <div style={styles.frame}>

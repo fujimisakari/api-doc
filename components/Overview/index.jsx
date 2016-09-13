@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { overviewStyles as styles } from '../styles';
+import { overviewStyles as styles } from '../../styles';
 
-const Overview = () => (
+export default () => (
   <div className="content" style={styles.frame}>
     <h1 style={styles.title}>Overview</h1>
     <p style={styles.desc}>
@@ -11,5 +11,3 @@ const Overview = () => (
     </p>
   </div>
 );
-
-export default Overview;

@@ -11,7 +11,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import API from '../components/API';
 import GetStarted from '../components/GetStarted';
 import Overview from '../components/Overview';
-import Root from '../containers/Root';
+import Root from '../components/Root';
 
 import configureStore from '../store/configureStore';
 
@@ -37,7 +37,7 @@ ReactDOM.render(
           <Route path="/api/*/*" component={API} />
         </Route>
       </Router>
-      <DevTools />
+      {/* <DevTools /> */}
     </div>
   </Provider>,
   document.getElementById('root')

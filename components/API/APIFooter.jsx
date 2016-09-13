@@ -1,7 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 
-import { apiFooterStyles as styles } from '../styles';
+import { apiFooterStyles as styles } from '../../styles';
 
 const APIFooter = () => (
   <Paper

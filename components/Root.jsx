@@ -4,10 +4,10 @@ import AppBar from 'material-ui/AppBar';
 import Title from 'react-title-component';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import Breadcrumbs from '../containers/Breadcrumbs';
 import NaviMenu from '../containers/NaviMenu';
 import customRawTheme from '../src/customTheme';
 import { rootStyles as styles } from '../styles';
+import Breadcrumbs from './Breadcrumbs';
 
 class Root extends Component {
 
