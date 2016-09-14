@@ -5,7 +5,6 @@ module.exports = {
   entry: {
     jsx: './index.jsx',
     html: './index.html',
-    css: './main.css',
     js: './main.js',
   },
 
@@ -20,7 +19,7 @@ module.exports = {
     ],
     loaders: [
       { test: /\.html$/, loader: 'file?name=[name].[ext]' },
-      { test: /\.css$/, loader: 'file?name=[name].[ext]' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] },
       { test: /\.md$/, loader: 'raw-loader' },
     ],

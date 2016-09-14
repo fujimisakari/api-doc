@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
+    "css-loader": "^0.24.0",
     "highlight": "^0.2.4",
     "highlight.js": "^9.6.0",
     "history": "^3.2.1",
@@ -30,7 +31,8 @@
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
     "redux-logger": "^2.6.1",
-    "redux-router": "^2.1.2"
+    "redux-router": "^2.1.2",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",

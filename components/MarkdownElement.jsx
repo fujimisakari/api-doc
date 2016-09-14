@@ -2,15 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import marked from 'marked';
 import highlight from 'highlight.js';
 
-require('../styles/mui-github-markdown.css');
-
-const styles = {
-  root: {
-    marginTop: 20,
-    marginBottom: 20,
-    padding: '0 10px',
-  },
-};
+require('../styles/markdown.css');
 
 class MarkdownElement extends Component {
 
@@ -31,14 +23,12 @@ class MarkdownElement extends Component {
 
   render() {
     const {
-      style,
       text,
     } = this.props;
 
     /* eslint-disable react/no-danger */
     return (
       <div
-        style={Object.assign({}, styles.root, style)}
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: marked(text) }}
       />

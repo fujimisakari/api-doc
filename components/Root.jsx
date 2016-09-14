@@ -9,6 +9,8 @@ import customRawTheme from '../src/customTheme';
 import { rootStyles as styles } from '../styles';
 import Breadcrumbs from './Breadcrumbs';
 
+require('../styles/main.css');
+
 class Root extends Component {
 
   getChildContext() {
