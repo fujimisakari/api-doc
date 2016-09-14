@@ -174,26 +174,12 @@ export const apiFooterStyles = {
   },
 };
 
-export const overviewStyles = {
+export const contentStyles = {
   frame: {
-    margin: '40px auto',
+    margin: '40px auto 0',
+    paddingBottom: '40px',
     textAlign: 'left',
     width: '78%',
     minWidth: '650px',
-  },
-  title: {
-    fontSize: '40px',
-    lineHeight: '50px',
-    marginTop: '-5px',
-    marginBottom: '25px',
-    color: '#333',
-    fontWeight: 'normal',
-    fontFamily: 'Roboto light,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif',
-  },
-  desc: {
-    fontSize: '18px',
-    lineHeight: '30px',
-    marginTop: '-6px',
-    fontFamily: 'Roboto light,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif',
   },
 };
