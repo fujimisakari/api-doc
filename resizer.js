@@ -1,5 +1,5 @@
 
-// For fixed Navigation and ContentHeader setting
+// For Navigation and ContentHeader fix setting
 const naviMenu = document.getElementById('naviMenu');
 const breadcrumbs = document.getElementById('breadcrumbs');
 const contentElements = document.getElementsByClassName('content');

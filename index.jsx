@@ -8,12 +8,11 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import API from '../components/API';
-import GetStarted from '../components/GetStarted';
-import Overview from '../components/Overview';
-import Root from '../components/Root';
-
-import configureStore from '../store/configureStore';
+import API from './components/API';
+import GetStarted from './components/GetStarted';
+import Overview from './components/Overview';
+import Root from './components/Root';
+import configureStore from './store/configureStore';
 
 injectTapEventPlugin();
 
