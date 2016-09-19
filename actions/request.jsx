@@ -21,7 +21,7 @@ export function fetchDocument() {
 export function receiveDocument(document) {
   return {
     type: RECEIVE_DOCUMENT,
-    document,
+    data: document,
   };
 }
 

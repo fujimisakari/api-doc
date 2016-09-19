@@ -31,18 +31,18 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
 
   const apiMethodList = methodInfoList.map(methodInfo => (
     <ListItem
-      key={methodInfo.methodGroup}
+      key={methodInfo.group}
       style={styles.parentList}
-      primaryText={methodInfo.methodGroup}
+      primaryText={methodInfo.group}
       primaryTogglesNestedList={isRounded}
       innerDivStyle={styles.innerDivStyle}
-      initiallyOpen={methodInfo.methodGroup === methodGroupName}
+      initiallyOpen={methodInfo.group === methodGroupName}
       className="naviItemList"
-      nestedItems={methodInfo.methodItems.map(method =>
+      nestedItems={methodInfo.methods.map(method =>
         <NestedListWrapper key={method}>
-          <Link to={`/api/${methodInfo.methodGroup}/${method}`}>
+          <Link to={`/api/${methodInfo.group}/${method}`}>
             <ListItem
-              style={(pathname === `/api/${methodInfo.methodGroup}/${method}`) ? styles.activeChildList : styles.childList}
+              style={(pathname === `/api/${methodInfo.group}/${method}`) ? styles.activeChildList : styles.childList}
               primaryText={method}
               innerDivStyle={styles.innerDivStyle}
             />

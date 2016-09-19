@@ -2,7 +2,7 @@ import { FETCH_DOCUMENT, RECEIVE_DOCUMENT } from '../constants';
 
 const initialData = {
   isFetching: false,
-  document: {},
+  data: {},
 };
 
 export default function document(state, action) {
@@ -10,7 +10,7 @@ export default function document(state, action) {
     case FETCH_DOCUMENT:
       return Object.assign({}, state, { isFetching: true });
     case RECEIVE_DOCUMENT:
-      return Object.assign({}, state, { isFetching: false, document: action.document });
+      return Object.assign({}, state, { isFetching: false, data: action.data });
     default:
       return initialData;
   }
