@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
-import { apiDocumentationStyles } from '../../styles';
+import { apiDocumentStyles } from '../../styles';
 import { API_URL_BASE } from '../../constants';
 
 
@@ -13,17 +13,17 @@ class APIDocument extends Component {
     const requiredStyle = { width: '15%', padding: '0 15px' };
     const descriptionStyle = { width: '60%', padding: '0 15px' };
 
-    apiDocumentationStyles.argumentHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, argumentStyle);
-    apiDocumentationStyles.exampleHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, exampleStyle);
-    apiDocumentationStyles.requiredHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, requiredStyle);
-    apiDocumentationStyles.descriptionHeader = Object.assign({}, apiDocumentationStyles.baseHeaderColumn, descriptionStyle);
+    apiDocumentStyles.argumentHeader = Object.assign({}, apiDocumentStyles.baseHeaderColumn, argumentStyle);
+    apiDocumentStyles.exampleHeader = Object.assign({}, apiDocumentStyles.baseHeaderColumn, exampleStyle);
+    apiDocumentStyles.requiredHeader = Object.assign({}, apiDocumentStyles.baseHeaderColumn, requiredStyle);
+    apiDocumentStyles.descriptionHeader = Object.assign({}, apiDocumentStyles.baseHeaderColumn, descriptionStyle);
 
-    apiDocumentationStyles.argumentRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, argumentStyle);
-    apiDocumentationStyles.exampleRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, exampleStyle);
-    apiDocumentationStyles.requiredRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, requiredStyle);
-    apiDocumentationStyles.descriponRow = Object.assign({}, apiDocumentationStyles.baseRowColumn, descriptionStyle);
+    apiDocumentStyles.argumentRow = Object.assign({}, apiDocumentStyles.baseRowColumn, argumentStyle);
+    apiDocumentStyles.exampleRow = Object.assign({}, apiDocumentStyles.baseRowColumn, exampleStyle);
+    apiDocumentStyles.requiredRow = Object.assign({}, apiDocumentStyles.baseRowColumn, requiredStyle);
+    apiDocumentStyles.descriponRow = Object.assign({}, apiDocumentStyles.baseRowColumn, descriptionStyle);
 
-    return apiDocumentationStyles;
+    return apiDocumentStyles;
   }
 
 

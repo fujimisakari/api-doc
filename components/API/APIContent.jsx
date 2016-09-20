@@ -12,10 +12,10 @@ class APIContent extends Component {
 
   getStyles(props) {
     if (props.tabType === DOCUMENT) {
-      apiContentStyles.documentation = apiContentStyles.active;
+      apiContentStyles.document = apiContentStyles.active;
       apiContentStyles.tester = apiContentStyles.tester;
     } else if (props.tabType === TESTER) {
-      apiContentStyles.documentation = apiContentStyles.tester;
+      apiContentStyles.document = apiContentStyles.tester;
       apiContentStyles.tester = apiContentStyles.active;
     }
     return apiContentStyles;
@@ -28,12 +28,12 @@ class APIContent extends Component {
       <div className="content" style={styles.frame}>
         <h1 style={styles.title}>{this.props.title}</h1>
         <p style={styles.desc}>{this.props.description}</p>
-        <Paper style={styles.document} zDepth={1}>
+        <Paper style={styles.tab} zDepth={1}>
           <Tabs
             value={this.props.tabType}
             onChange={this.props.onTypeChange}
           >
-            <Tab style={styles.documentation} label="Documentation" value="DOCUMENT" >
+            <Tab style={styles.document} label="Document" value="DOCUMENT" >
               <APIDocument />
             </Tab>
             <Tab style={styles.tester} label="Tester" value="TESTER">

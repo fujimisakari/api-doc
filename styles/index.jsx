@@ -102,7 +102,7 @@ export const apiContentStyles = {
     marginTop: '-6px',
     fontFamily: 'Roboto light,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif',
   },
-  document: {
+  tab: {
     paddingBottom: '35px',
   },
   active: {
@@ -113,7 +113,7 @@ export const apiContentStyles = {
   },
 };
 
-export const apiDocumentationStyles = {
+export const apiDocumentStyles = {
   frame: {
     padding: '0 20px',
   },
