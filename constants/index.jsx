@@ -8,5 +8,5 @@ export const FETCH_DOCUMENT = 'FETCH_DOCUMENT';
 export const RECEIVE_DOCUMENT = 'RECEIVE_DOCUMENT';
 
 export const SET_TAB_TYPE = 'SET_TAB_TYPE';
-export const DOCUMENTATION = 'DOCUMENTATION';
+export const DOCUMENT = 'DOCUMENT';
 export const TESTER = 'TESTER';

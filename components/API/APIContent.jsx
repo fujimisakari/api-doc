@@ -6,12 +6,12 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import APIDocument from '../../containers/APIDocument';
 import APITester from './APITester';
 import { apiContentStyles } from '../../styles';
-import { DOCUMENTATION, TESTER } from '../../constants';
+import { DOCUMENT, TESTER } from '../../constants';
 
 class APIContent extends Component {
 
   getStyles(props) {
-    if (props.tabType === DOCUMENTATION) {
+    if (props.tabType === DOCUMENT) {
       apiContentStyles.documentation = apiContentStyles.active;
       apiContentStyles.tester = apiContentStyles.tester;
     } else if (props.tabType === TESTER) {
@@ -33,7 +33,7 @@ class APIContent extends Component {
             value={this.props.tabType}
             onChange={this.props.onTypeChange}
           >
-            <Tab style={styles.documentation} label="Documentation" value="DOCUMENTATION" >
+            <Tab style={styles.documentation} label="Documentation" value="DOCUMENT" >
               <APIDocument />
             </Tab>
             <Tab style={styles.tester} label="Tester" value="TESTER">
