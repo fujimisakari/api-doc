@@ -8,14 +8,12 @@ const Breadcrumbs = ({ pathname }) => {
   const topics = [];
   if (pathList[1] === '') {
     topics.push('Get Started');
+  } else if (pathList[1] === 'api') {
+    topics.push(pathList[1].toUpperCase());
+    topics.push(pathList[2].charAt(0).toUpperCase() + pathList[2].slice(1));
+    topics.push(pathList.slice(3).join('/'));
   } else {
-    for (let i = 1; i < pathList.length; i++) {
-      if (pathList[i] === 'api') {
-        topics.push(pathList[i].toUpperCase());
-      } else {
-        topics.push(pathList[i].charAt(0).toUpperCase() + pathList[i].slice(1));
-      }
-    }
+    topics.push(pathList[1].charAt(0).toUpperCase() + pathList[1].slice(1));
   }
 
   return (

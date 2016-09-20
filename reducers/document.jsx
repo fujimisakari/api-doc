@@ -1,17 +1,12 @@
 import { FETCH_DOCUMENT, RECEIVE_DOCUMENT } from '../constants';
 
-const initialData = {
-  isFetching: false,
-  data: {},
-};
-
-export default function document(state, action) {
+export default function document(state = { hasData: false, isFetching: false, data: {} }, action) {
   switch (action.type) {
     case FETCH_DOCUMENT:
-      return Object.assign({}, state, { isFetching: true });
+      return Object.assign({}, state, { hasData: false, isFetching: true });
     case RECEIVE_DOCUMENT:
-      return Object.assign({}, state, { isFetching: false, data: action.data });
+      return Object.assign({}, state, { hasData: true, isFetching: false, data: action.data });
     default:
-      return initialData;
+      return state;
   }
 }

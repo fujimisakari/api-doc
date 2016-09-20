@@ -38,7 +38,6 @@ ReactDOM.render(
           <Route path="/api/*/*" component={API} />
         </Route>
       </Router>
-      <DevTools />
       {/* <DevTools /> */}
     </div>
   </Provider>,

@@ -36,7 +36,6 @@ import NaviMenu from '../components/NaviMenu';
 // ];
 
 const mapStateToProps = (state) => {
-  console.log(state.document);
   if (Object.keys(state.document.data).length === 0) {
     return { methodInfoList: [{ group: '', methods: [] }] };
   }

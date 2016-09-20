@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import { apiDocumentationStyles } from '../../styles';
-import { SERVER_DOMAIN } from '../../constants';
+import { API_URL_BASE } from '../../constants';
 
 
-class APIDocumentation extends Component {
+class APIDocument extends Component {
 
   getStyles() {
     const argumentStyle = { width: '15%', padding: '0 15px' };
@@ -28,27 +28,35 @@ class APIDocumentation extends Component {
 
 
   render() {
-    const styles = this.getStyles();
-    const testDataList = [
-      { argument: 'token',
-        example: 'xxxx-xxxx-xxxx',
-        required: 'Required',
-        description: 'Authentication token (Requires scope: channels:write)' },
-      { argument: 'name',
-        example: 'mychannel',
-        required: 'Required',
-        description: 'Name of channel to create' },
-    ];
+    if (this.props.hasData === false) {
+      return (
+        <div />
+      );
+    }
 
-    const text = '{"aaa":"ccc", "bbb":[{"ddd":1,"eee":2},{"ddd":3,"eee":4}]}';
-    const jsonBefore = JSON.parse(text);
-    const json = JSON.stringify(jsonBefore, null, '    ');
+    // const testDataList = [
+    //   { argument: 'token',
+    //     example: 'xxxx-xxxx-xxxx',
+    //     required: 'Required',
+    //     description: 'Authentication token (Requires scope: channels:write)' },
+    //   { argument: 'name',
+    //     example: 'mychannel',
+    //     required: 'Required',
+    //     description: 'Name of channel to create' },
+    // ];
+
+    // const text = '{"aaa":"ccc", "bbb":[{"ddd":1,"eee":2},{"ddd":3,"eee":4}]}';
+    // const jsonBefore = JSON.parse(text);
+
+    const styles = this.getStyles();
+    const responseJson = JSON.stringify(this.props.response, null, '    ');
+    const url = `${API_URL_BASE}/${this.props.method}`;
 
     return (
       <div style={styles.frame}>
         <h2 style={styles.headline}>URL</h2>
         <p>
-          This method has the URL <code>{SERVER_DOMAIN}/api/channels.join</code>
+          This method has the URL <code>{url}</code>
         </p>
 
         <h2 style={styles.headline}>Arguments</h2>
@@ -62,7 +70,7 @@ class APIDocumentation extends Component {
             </TableRow>
           </TableHeader>
           <TableBody displayRowCheckbox={false}>
-            {testDataList.map((data, index) =>
+            {this.props.request.arguments.map((data, index) =>
               <TableRow key={index}>
                 <TableRowColumn style={styles.argumentRow}><code>{data.argument}</code></TableRowColumn>
                 <TableRowColumn style={styles.exampleRow}><code>{data.example}</code></TableRowColumn>
@@ -75,11 +83,18 @@ class APIDocumentation extends Component {
 
         <h2 style={styles.headline}>Response</h2>
         <pre>
-          {json}
+          {responseJson}
         </pre>
       </div>
     );
   }
 }
 
-export default APIDocumentation;
+APIDocument.propTypes = {
+  method: React.PropTypes.string.isRequired,
+  request: React.PropTypes.object.isRequired,
+  response: React.PropTypes.object.isRequired,
+  hasData: React.PropTypes.bool.isRequired,
+};
+
+export default APIDocument;
