@@ -33,7 +33,7 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
     <ListItem
       key={methodInfo.group}
       style={styles.parentList}
-      primaryText={methodInfo.group}
+      primaryText={methodInfo.group.charAt(0).toUpperCase() + methodInfo.group.slice(1)}
       primaryTogglesNestedList={isRounded}
       innerDivStyle={styles.innerDivStyle}
       initiallyOpen={methodInfo.group === methodGroupName}
@@ -64,7 +64,7 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
             />
           </Link>
         </div>
-        <Subheader style={styles.subHeaderStyle}>APIs</Subheader>
+        <Subheader style={styles.subHeaderStyle}>API</Subheader>
         {apiMethodList}
       </List>
     </div>
