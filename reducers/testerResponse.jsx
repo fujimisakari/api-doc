@@ -1,9 +1,9 @@
 import { TESTER_RESPONSE } from '../constants';
 
-export default function testerResponse(state = {}, action) {
+export default function testerResponse(state = { requestURL: '', data: {} }, action) {
   switch (action.type) {
     case TESTER_RESPONSE:
-      return 'responseData';
+      return Object.assign({}, state, { requestURL: action.requestURL, data: action.resoponseData });
     default:
       return state;
   }

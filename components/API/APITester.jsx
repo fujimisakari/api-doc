@@ -44,6 +44,7 @@ class APITester extends Component {
       responseBlock = (
         <div>
           <h2 style={styles.headline}>Response</h2>
+          <code>{this.props.requestURL}</code>
           <pre>
             {responseJson}
           </pre>
@@ -55,7 +56,9 @@ class APITester extends Component {
 
     return (
       <div style={styles.frame}>
+
         <h2 style={styles.headline}>Arguments</h2>
+
         <Table selectable={disableSelectable}>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow key={'header'} style={styles.tableRow}>
@@ -98,6 +101,7 @@ class APITester extends Component {
 APITester.propTypes = {
   request: React.PropTypes.object.isRequired,
   response: React.PropTypes.object.isRequired,
+  requestURL: React.PropTypes.string.isRequired,
   hasData: React.PropTypes.bool.isRequired,
   onRequestClick: React.PropTypes.func.isRequired,
 };
