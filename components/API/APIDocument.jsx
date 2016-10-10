@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import { apiDocumentStyles } from '../../styles';
-import { API_URL_DOMAIN, API_URL_PREFIX } from '../../constants';
+import { API_URL_DOMAIN, API_URL_PREFIX } from '../../config';
 
 class APIDocument extends Component {
 
@@ -26,15 +26,15 @@ class APIDocument extends Component {
   }
 
   render() {
-    if (this.props.hasData === false) {
+    if (this.props.hasAPISchemaData === false) {
       return (
         <div />
       );
     }
 
     const styles = this.getStyles();
-    const responseJson = JSON.stringify(this.props.response, null, '    ');
-    const url = `${API_URL_DOMAIN}${API_URL_PREFIX}/${this.props.method}`;
+    const responseJson = JSON.stringify(this.props.responseSchema, null, '    ');
+    const url = `${API_URL_DOMAIN}${API_URL_PREFIX}/${this.props.url}`;
 
     return (
       <div style={styles.frame}>
@@ -54,7 +54,7 @@ class APIDocument extends Component {
             </TableRow>
           </TableHeader>
           <TableBody displayRowCheckbox={false}>
-            {this.props.request.arguments.map((data, index) =>
+            {this.props.requestSchema.arguments.map((data, index) =>
               <TableRow key={index}>
                 <TableRowColumn style={styles.argumentRow}><code>{data.argument}</code></TableRowColumn>
                 <TableRowColumn style={styles.exampleRow}><code>{data.example}</code></TableRowColumn>
@@ -75,10 +75,10 @@ class APIDocument extends Component {
 }
 
 APIDocument.propTypes = {
-  method: React.PropTypes.string.isRequired,
-  request: React.PropTypes.object.isRequired,
-  response: React.PropTypes.object.isRequired,
-  hasData: React.PropTypes.bool.isRequired,
+  url: React.PropTypes.string.isRequired,
+  requestSchema: React.PropTypes.object.isRequired,
+  responseSchema: React.PropTypes.object.isRequired,
+  hasAPISchemaData: React.PropTypes.bool.isRequired,
 };
 
 export default APIDocument;

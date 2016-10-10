@@ -27,7 +27,7 @@ class APITester extends Component {
   }
 
   render() {
-    if (this.props.hasData === false) {
+    if (this.props.hasAPISchemaData === false) {
       return (
         <div />
       );
@@ -64,7 +64,7 @@ class APITester extends Component {
             </TableRow>
           </TableHeader>
           <TableBody displayRowCheckbox={false}>
-            {this.props.request.arguments.map((data, index) =>
+            {this.props.requestSchema.arguments.map((data, index) =>
               <TableRow key={index}>
                 <TableRowColumn style={styles.argumentRow}><code>{data.argument}</code></TableRowColumn>
                 <TableRowColumn style={styles.requiredRow}>{data.required}</TableRowColumn>
@@ -95,10 +95,10 @@ class APITester extends Component {
 }
 
 APITester.propTypes = {
-  request: React.PropTypes.object.isRequired,
+  requestSchema: React.PropTypes.object.isRequired,
   response: React.PropTypes.object.isRequired,
   requestURL: React.PropTypes.string.isRequired,
-  hasData: React.PropTypes.bool.isRequired,
+  hasAPISchemaData: React.PropTypes.bool.isRequired,
   onRequestClick: React.PropTypes.func.isRequired,
 };
 

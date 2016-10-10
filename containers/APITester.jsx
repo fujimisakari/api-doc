@@ -10,21 +10,20 @@ function getURL(state) {
 
 function mapStateToProps(state) {
   const url = getURL(state);
-  let requestData = {};
+  let requestSchema = {};
   let response = {};
   let requestURL = '';
   if (state.apiSchema.hasData) {
     const schemaData = state.apiSchema.schemaData[url];
-    requestData = schemaData.request;
+    requestSchema = schemaData.request;
     response = state.testerResponse.data;
     requestURL = state.testerResponse.requestURL;
   }
   return {
-    method: url,
-    request: requestData,
+    hasAPISchemaData: state.apiSchema.hasData,
+    requestSchema,
     response,
     requestURL,
-    hasData: state.apiSchema.hasData,
   };
 }
 
