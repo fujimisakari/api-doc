@@ -1,4 +1,5 @@
 import makeRequest from './request';
+import { API_URL_PREFIX } from '../config';
 import { TESTER_RESPONSE } from '../constants';
 
 function requestCallback(requestURL, resoponseData) {
@@ -50,7 +51,7 @@ export default function request(method = 'get') {
     const tmpParammData = createParamData(state.form, schemaData.request.arguments);
 
     let paramData = {};
-    let requestURL = `/${url}`;
+    let requestURL = `${API_URL_PREFIX}/${url}`;
     for (const key of Object.keys(tmpParammData)) {
       const re = new RegExp(`:${key}`);
       const newURL = requestURL.replace(re, tmpParammData[key]);

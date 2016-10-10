@@ -8,6 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import customRawTheme from './customTheme';
 import Breadcrumbs from './Breadcrumbs';
 import NaviMenu from '../containers/NaviMenu';
+import { APP_NAME } from '../config';
 import { rootStyles as styles } from '../styles';
 
 require('../styles/main.css');
@@ -21,10 +22,10 @@ class Root extends Component {
   render() {
     return (
       <div>
-        <Title render="API Document" />
+        <Title render={`${APP_NAME} API Document`} />
         <header className="header">
           <AppBar
-            title={<Link to="/" style={styles.appBarTitle}>API Document</Link>}
+            title={<Link to="/" style={styles.appBarTitle}>{`${APP_NAME} API Document`}</Link>}
             style={styles.appBar}
             zDepth={0}
             showMenuIconButton={false}

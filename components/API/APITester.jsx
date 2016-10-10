@@ -5,7 +5,7 @@ import { colors } from 'material-ui/styles';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import TextForm from '../../containers/TextForm';
-import { API_URL_BASE } from '../../config';
+import { API_URL_DOMAIN } from '../../config';
 import { apiTesterStyles } from '../../styles';
 
 class APITester extends Component {
@@ -42,7 +42,7 @@ class APITester extends Component {
       responseBlock = (
         <div>
           <h2 style={styles.headline}>Response</h2>
-          <code>{API_URL_BASE}{this.props.requestURL}</code>
+          <code>{API_URL_DOMAIN}{this.props.requestURL}</code>
           <pre>
             {responseJson}
           </pre>

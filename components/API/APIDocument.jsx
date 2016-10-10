@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import { apiDocumentStyles } from '../../styles';
-import { API_URL_BASE } from '../../constants';
+import { API_URL_DOMAIN, API_URL_PREFIX } from '../../constants';
 
 class APIDocument extends Component {
 
@@ -34,7 +34,7 @@ class APIDocument extends Component {
 
     const styles = this.getStyles();
     const responseJson = JSON.stringify(this.props.response, null, '    ');
-    const url = `${API_URL_BASE}/${this.props.method}`;
+    const url = `${API_URL_DOMAIN}${API_URL_PREFIX}/${this.props.method}`;
 
     return (
       <div style={styles.frame}>

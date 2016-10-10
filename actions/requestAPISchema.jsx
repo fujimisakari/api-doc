@@ -1,4 +1,5 @@
 import makeRequest from './request';
+import { API_SCHEMA_DATA_URL } from '../config';
 import { FETCH_API_SCHEMA, RECEIVE_API_SCHEMA } from '../constants';
 
 function fetchAPISchema() {
@@ -17,7 +18,7 @@ function requestCallback(responseData) {
 function getAPISchema() {
   return dispatch => {
     dispatch(fetchAPISchema());
-    return makeRequest('get', '/document')
+    return makeRequest('get', API_SCHEMA_DATA_URL)
       .then(response => dispatch(requestCallback(response.data)))
       .catch(error => console.log(error));
   };
