@@ -4,7 +4,6 @@ import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowCol
 import { apiDocumentStyles } from '../../styles';
 import { API_URL_BASE } from '../../constants';
 
-
 class APIDocument extends Component {
 
   getStyles() {
@@ -26,27 +25,12 @@ class APIDocument extends Component {
     return apiDocumentStyles;
   }
 
-
   render() {
     if (this.props.hasData === false) {
       return (
         <div />
       );
     }
-
-    // const testDataList = [
-    //   { argument: 'token',
-    //     example: 'xxxx-xxxx-xxxx',
-    //     required: 'Required',
-    //     description: 'Authentication token (Requires scope: channels:write)' },
-    //   { argument: 'name',
-    //     example: 'mychannel',
-    //     required: 'Required',
-    //     description: 'Name of channel to create' },
-    // ];
-
-    // const text = '{"aaa":"ccc", "bbb":[{"ddd":1,"eee":2},{"ddd":3,"eee":4}]}';
-    // const jsonBefore = JSON.parse(text);
 
     const styles = this.getStyles();
     const responseJson = JSON.stringify(this.props.response, null, '    ');

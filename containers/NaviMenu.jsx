@@ -2,44 +2,11 @@ import { connect } from 'react-redux';
 
 import NaviMenu from '../components/NaviMenu';
 
-// const stab = [
-//   { methodGroup: 'channels',
-//     methodItems: [
-//       'archive',
-//       'create',
-//       'history',
-//       'info',
-//       'invite',
-//       'join',
-//       'kick',
-//       'leave',
-//     ],
-//   },
-//   { methodGroup: 'chat',
-//     methodItems: [
-//       'delete',
-//       'meMessage',
-//       'postMessage',
-//       'update',
-//     ],
-//   },
-//   { methodGroup: 'users',
-//     methodItems: [
-//       'getPresence',
-//       'identity',
-//       'info',
-//       'list',
-//       'setActive',
-//       'setPresence',
-//     ],
-//   },
-// ];
-
 const mapStateToProps = (state) => {
-  if (Object.keys(state.document.data).length === 0) {
-    return { methodInfoList: [{ group: '', methods: [] }] };
+  if (state.apiSchema.hasData) {
+    return { methodInfoList: state.apiSchema.apiMethods };
   }
-  return { methodInfoList: state.document.data.apiMethods };
+  return { methodInfoList: [{ group: '', methods: [] }] };
 };
 
 function mapDispatchToProps() {

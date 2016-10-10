@@ -2,25 +2,25 @@ import { connect } from 'react-redux';
 
 import APIDocument from '../components/API/APIDocument';
 
-function getMethod(state) {
+function getURL(state) {
   const pathList = state.routing.locationBeforeTransitions.pathname.split('/');
   return pathList.slice(3).join('/');
 }
 
 function mapStateToProps(state) {
-  const method = getMethod(state);
+  const url = getURL(state);
   let request = {};
   let response = {};
-  if (state.document.hasData) {
-    const schemaData = state.document.data.schemaData[method];
+  if (state.apiSchema.hasData) {
+    const schemaData = state.apiSchema.schemaData[url];
     request = schemaData.request;
     response = schemaData.response;
   }
   return {
-    method,
+    method: url,
     request,
     response,
-    hasData: state.document.hasData,
+    hasData: state.apiSchema.hasData,
   };
 }
 

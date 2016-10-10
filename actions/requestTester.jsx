@@ -46,7 +46,7 @@ export default function request(method = 'get') {
   return (dispatch, getState) => {
     const state = getState();
     const url = getURL(state);
-    const schemaData = state.document.data.schemaData[url];
+    const schemaData = state.apiSchema.schemaData[url];
     const tmpParammData = createParamData(state.form, schemaData.request.arguments);
 
     let paramData = {};

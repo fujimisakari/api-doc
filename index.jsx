@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import getDocumentIfNeeded from './actions/requestSchema';
+import getAPISchemaIfNeeded from './actions/requestAPISchema';
 import API from './components/API';
 import GetStarted from './components/GetStarted';
 import Overview from './components/Overview';
@@ -24,7 +24,7 @@ const DevTools = createDevTools(
 );
 
 const store = configureStore(DevTools);
-store.dispatch(getDocumentIfNeeded());
+store.dispatch(getAPISchemaIfNeeded());
 
 const history = syncHistoryWithStore(browserHistory, store);
 

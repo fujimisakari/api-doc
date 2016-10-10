@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import updateForm from '../actions/form';
 
+import updateForm from '../actions/form';
 import TextForm from '../components/TextForm';
 
 function mapStateToProps(state, params) {

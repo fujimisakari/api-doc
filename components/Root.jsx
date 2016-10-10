@@ -1,13 +1,14 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
-import AppBar from 'material-ui/AppBar';
 import Title from 'react-title-component';
+
+import AppBar from 'material-ui/AppBar';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import NaviMenu from '../containers/NaviMenu';
-import { rootStyles as styles } from '../styles';
 import customRawTheme from './customTheme';
 import Breadcrumbs from './Breadcrumbs';
+import NaviMenu from '../containers/NaviMenu';
+import { rootStyles as styles } from '../styles';
 
 require('../styles/main.css');
 

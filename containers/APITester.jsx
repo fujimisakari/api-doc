@@ -3,28 +3,28 @@ import { connect } from 'react-redux';
 import request from '../actions/requestTester';
 import APITester from '../components/API/APITester';
 
-function getMethod(state) {
+function getURL(state) {
   const pathList = state.routing.locationBeforeTransitions.pathname.split('/');
   return pathList.slice(3).join('/');
 }
 
 function mapStateToProps(state) {
-  const method = getMethod(state);
+  const url = getURL(state);
   let requestData = {};
   let response = {};
   let requestURL = '';
-  if (state.document.hasData) {
-    const schemaData = state.document.data.schemaData[method];
+  if (state.apiSchema.hasData) {
+    const schemaData = state.apiSchema.schemaData[url];
     requestData = schemaData.request;
     response = state.testerResponse.data;
     requestURL = state.testerResponse.requestURL;
   }
   return {
-    method,
+    method: url,
     request: requestData,
     response,
     requestURL,
-    hasData: state.document.hasData,
+    hasData: state.apiSchema.hasData,
   };
 }
 

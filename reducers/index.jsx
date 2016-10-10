@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import document from './document';
+import apiSchema from './apiSchema';
 import form from './form';
 import tab from './tab';
 import testerResponse from './testerResponse';
@@ -9,7 +9,7 @@ import testerResponse from './testerResponse';
 const rootReducer = combineReducers({
   tab,
   form,
-  document,
+  apiSchema,
   testerResponse,
   routing: routerReducer,
 });

@@ -3,17 +3,17 @@ import { connect } from 'react-redux';
 import setTabType from '../actions/tab';
 import APIContent from '../components/API/APIContent';
 
-function getMethod(state) {
+function getURL(state) {
   const pathList = state.routing.locationBeforeTransitions.pathname.split('/');
   return pathList.slice(3).join('/');
 }
 
 function mapStateToProps(state) {
-  const method = getMethod(state);
+  const url = getURL(state);
   let title = '';
   let description = '';
-  if (state.document.hasData) {
-    const schemaData = state.document.data.schemaData[method];
+  if (state.apiSchema.hasData) {
+    const schemaData = state.apiSchema.schemaData[url];
     title = schemaData.title;
     description = schemaData.description;
   }

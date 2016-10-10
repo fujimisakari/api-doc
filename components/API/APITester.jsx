@@ -5,8 +5,8 @@ import { colors } from 'material-ui/styles';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import TextForm from '../../containers/TextForm';
+import { API_URL_BASE } from '../../config';
 import { apiTesterStyles } from '../../styles';
-
 
 class APITester extends Component {
 
@@ -34,25 +34,21 @@ class APITester extends Component {
     }
 
     const styles = this.getStyles();
+    const disableSelectable = false;
 
-    // const responseJson = JSON.stringify(this.props.response, null, '    ');
-    // const text = '{"aaa":"ccc", "bbb":[{"ddd":1,"eee":2},{"ddd":3,"eee":4}]}';
-    // const jsonBefore = JSON.parse(text);
     let responseBlock;
     if (Object.keys(this.props.response).length > 0) {
       const responseJson = JSON.stringify(this.props.response, null, '    ');
       responseBlock = (
         <div>
           <h2 style={styles.headline}>Response</h2>
-          <code>{this.props.requestURL}</code>
+          <code>{API_URL_BASE}{this.props.requestURL}</code>
           <pre>
             {responseJson}
           </pre>
         </div>
       );
     }
-
-    const disableSelectable = false;
 
     return (
       <div style={styles.frame}>
