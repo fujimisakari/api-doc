@@ -3,10 +3,13 @@ export const SERVER_HOST = 'localhost';
 export const SERVER_PORT = '8880';
 export const API_URL_BASE = `http://${SERVER_HOST}:${SERVER_PORT}/api`;
 
-
 export const FETCH_DOCUMENT = 'FETCH_DOCUMENT';
 export const RECEIVE_DOCUMENT = 'RECEIVE_DOCUMENT';
 
 export const SET_TAB_TYPE = 'SET_TAB_TYPE';
 export const DOCUMENT = 'DOCUMENT';
 export const TESTER = 'TESTER';
+
+export const UPDATE_FORM = 'UPDATE_FORM';
+
+export const TESTER_RESPONSE = 'TESTER_RESPONSE';

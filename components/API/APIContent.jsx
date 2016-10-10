@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 import { Tabs, Tab } from 'material-ui/Tabs';
 
 import APIDocument from '../../containers/APIDocument';
-import APITester from './APITester';
+import APITester from '../../containers/APITester';
 import { apiContentStyles } from '../../styles';
 import { DOCUMENT, TESTER } from '../../constants';
 
@@ -29,14 +29,11 @@ class APIContent extends Component {
         <h1 style={styles.title}>{this.props.title}</h1>
         <p style={styles.desc}>{this.props.description}</p>
         <Paper style={styles.tab} zDepth={1}>
-          <Tabs
-            value={this.props.tabType}
-            onChange={this.props.onTypeChange}
-          >
-            <Tab style={styles.document} label="Document" value="DOCUMENT" >
+          <Tabs>
+            <Tab style={styles.document} label="Document" value="DOCUMENT" onClick={this.props.onTypeChange}>
               <APIDocument />
             </Tab>
-            <Tab style={styles.tester} label="Tester" value="TESTER">
+            <Tab style={styles.tester} label="Tester" value="TESTER" onClick={this.props.onTypeChange}>
               <APITester />
             </Tab>
           </Tabs>

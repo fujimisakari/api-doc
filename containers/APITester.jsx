@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
+import { testerRequest } from '../actions/request';
 
-import setTabType from '../actions/tab';
-import APIContent from '../components/API/APIContent';
+import APITester from '../components/API/APITester';
 
 function getMethod(state) {
   const pathList = state.routing.locationBeforeTransitions.pathname.split('/');
@@ -10,30 +10,28 @@ function getMethod(state) {
 
 function mapStateToProps(state) {
   const method = getMethod(state);
-  let title = '';
-  let description = '';
+  let request = {};
+  let response = {};
   if (state.document.hasData) {
     const schemaData = state.document.data.schemaData[method];
-    title = schemaData.title;
-    description = schemaData.description;
+    request = schemaData.request;
+    response = state.testerResponse;
   }
-
   return {
-    title,
-    description,
-    tabType: state.tab,
+    method,
+    request,
+    response,
+    hasData: state.document.hasData,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onTypeChange: (event) => {
-      dispatch(setTabType(event.target.innerText));
-    },
-  };
-}
+const mapDispatchToProps = (dispatch) => ({
+  onRequestClick: () => {
+    dispatch(testerRequest());
+  },
+});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(APIContent);
+)(APITester);

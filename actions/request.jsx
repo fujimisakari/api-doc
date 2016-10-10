@@ -1,6 +1,6 @@
 import request from 'axios';
 
-import { SERVER_HOST, SERVER_PORT, FETCH_DOCUMENT, RECEIVE_DOCUMENT } from '../constants';
+import { SERVER_HOST, SERVER_PORT, FETCH_DOCUMENT, RECEIVE_DOCUMENT, TESTER_RESPONSE } from '../constants';
 
 function makeRequest(method, api, id, data) {
   const config = { baseURL: `http://${SERVER_HOST}:${SERVER_PORT}/api` };
@@ -42,3 +42,15 @@ export function getDocumentIfNeeded() {
     return dispatch(getDocument());
   };
 }
+
+export function testerRequest() {
+  return {
+    type: TESTER_RESPONSE,
+    data: 'hgoehoge',
+  };
+}
+// return dispatch => {
+//   return makeRequest('get', '/document')
+//     .then(response => dispatch(receiveDocument(response.data)))
+//     .catch(error => console.log(error));
+// };

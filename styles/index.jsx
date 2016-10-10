@@ -145,8 +145,31 @@ export const apiTesterStyles = {
   },
   headline: {
     fontSize: 24,
-    marginBottom: 12,
+    margin: '35px 0 12px 0',
     fontWeight: 400,
+  },
+  tableRow: {
+    borderBottom: '2px solid',
+    borderColor: colors.deepPurpleA200,
+  },
+  baseHeaderColumn: {
+    color: colors.darkBlack,
+    fontSize: 18,
+    fontWeight: 500,
+    textAlign: 'left',
+  },
+  baseRowColumn: {
+    fontSize: 15,
+    whiteSpace: 'normal',
+    textOverflow: 'clip',
+  },
+  requestBtnDiv: {
+    marginTop: '25px',
+    textAlign: 'center',
+  },
+  requestBtnLabel: {
+    color: typography.textFullWhite,
+    fontWeight: typography.fontWeightNormal,
   },
 };
 
