@@ -15,7 +15,7 @@ function mapStateToProps(state) {
   let requestURL = '';
   if (state.apiSchema.hasData) {
     const schemaData = state.apiSchema.schemaData[url];
-    requestSchema = schemaData.request;
+    requestSchema = schemaData.requestSchema;
     response = state.testerResponse.data;
     requestURL = state.testerResponse.requestURL;
   }

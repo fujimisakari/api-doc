@@ -4,9 +4,9 @@ import NaviMenu from '../components/NaviMenu';
 
 const mapStateToProps = (state) => {
   if (state.apiSchema.hasData) {
-    return { methodInfoList: state.apiSchema.apiMethods };
+    return { urlGroupList: state.apiSchema.apiURLs };
   }
-  return { methodInfoList: [{ group: '', methods: [] }] };
+  return { urlGroupList: [{ name: '', urls: [] }] };
 };
 
 function mapDispatchToProps() {

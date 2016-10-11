@@ -13,8 +13,8 @@ function mapStateToProps(state) {
   let responseSchema = {};
   if (state.apiSchema.hasData) {
     const schemaData = state.apiSchema.schemaData[url];
-    requestSchema = schemaData.request;
-    responseSchema = schemaData.response;
+    requestSchema = schemaData.requestSchema;
+    responseSchema = schemaData.responseSchema;
   }
   return {
     hasAPISchemaData: state.apiSchema.hasData,

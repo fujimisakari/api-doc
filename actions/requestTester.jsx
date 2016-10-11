@@ -18,10 +18,10 @@ function getURL(state) {
 function createParamData(inputFormData, argumentList) {
   const paramData = {};
   for (const argument of argumentList) {
-    if (argument.argument in inputFormData) {
-      paramData[argument.argument] = inputFormData[argument.argument];
+    if (argument.name in inputFormData) {
+      paramData[argument.name] = inputFormData[argument.name];
     } else {
-      paramData[argument.argument] = '';
+      paramData[argument.name] = '';
     }
   }
   return paramData;
@@ -48,7 +48,7 @@ export default function request(method = 'get') {
     const state = getState();
     const url = getURL(state);
     const schemaData = state.apiSchema.schemaData[url];
-    const tmpParammData = createParamData(state.form, schemaData.request.arguments);
+    const tmpParammData = createParamData(state.form, schemaData.requestSchema.arguments);
 
     let paramData = {};
     let requestURL = `${API_URL_PREFIX}/${url}`;

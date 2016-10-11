@@ -23,28 +23,28 @@ NestedListWrapper.propTypes = {
   children: PropTypes.node,
 };
 
-const NaviMenu = ({ methodInfoList, pathname }) => {
-  let methodGroupName = null;
+const NaviMenu = ({ urlGroupList, pathname }) => {
+  let urlGroupName = '';
   const pathList = pathname.split('/');
   if (pathList.length > 1 && pathList[1] === 'api') {
-    methodGroupName = pathList[2];
+    urlGroupName = pathList[2];
   }
 
-  const apiMethodList = methodInfoList.map(methodInfo => (
+  const apiMethodList = urlGroupList.map(urlGroup => (
     <ListItem
-      key={methodInfo.group}
+      key={urlGroup.name}
       style={styles.parentList}
-      primaryText={methodInfo.group.charAt(0).toUpperCase() + methodInfo.group.slice(1)}
+      primaryText={urlGroup.name.charAt(0).toUpperCase() + urlGroup.name.slice(1)}
       primaryTogglesNestedList={isRounded}
       innerDivStyle={styles.innerDivStyle}
-      initiallyOpen={methodInfo.group === methodGroupName}
+      initiallyOpen={urlGroup.name === urlGroupName}
       className="naviItemList"
-      nestedItems={methodInfo.methods.map(method =>
-        <NestedListWrapper key={method}>
-          <Link to={`/api/${methodInfo.group}/${method}`}>
+      nestedItems={urlGroup.urls.map(url =>
+        <NestedListWrapper key={url}>
+          <Link to={`/api/${urlGroup.group}/${url}`}>
             <ListItem
-              style={(pathname === `/api/${methodInfo.group}/${method}`) ? styles.activeChildList : styles.childList}
-              primaryText={method}
+              style={(pathname === `/api/${urlGroup.name}/${url}`) ? styles.activeChildList : styles.childList}
+              primaryText={url}
               innerDivStyle={styles.innerDivStyle}
             />
           </Link>
@@ -73,7 +73,7 @@ const NaviMenu = ({ methodInfoList, pathname }) => {
 };
 
 NaviMenu.propTypes = {
-  methodInfoList: PropTypes.array.isRequired,
+  urlGroupList: PropTypes.array.isRequired,
   pathname: PropTypes.string.isRequired,
 };
 
