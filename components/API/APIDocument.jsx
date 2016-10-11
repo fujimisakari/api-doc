@@ -56,7 +56,7 @@ class APIDocument extends Component {
           <TableBody displayRowCheckbox={false}>
             {this.props.requestSchema.arguments.map((data, index) =>
               <TableRow key={index}>
-                <TableRowColumn style={styles.argumentRow}><code>{data.argument}</code></TableRowColumn>
+                <TableRowColumn style={styles.argumentRow}><code>{data.name}</code></TableRowColumn>
                 <TableRowColumn style={styles.exampleRow}><code>{data.example}</code></TableRowColumn>
                 <TableRowColumn style={styles.requiredRow}>{data.required}</TableRowColumn>
                 <TableRowColumn style={styles.descriponRow}>{data.description}</TableRowColumn>

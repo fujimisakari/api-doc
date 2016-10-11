@@ -27,8 +27,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onTypeChange: (event) => {
-      dispatch(setTabType(event.target.innerText));
+    onTypeChange: (tab) => {
+      dispatch(setTabType(tab.props.value));
     },
   };
 }

@@ -29,11 +29,11 @@ class APIContent extends Component {
         <h1 style={styles.title}>{this.props.title}</h1>
         <p style={styles.desc}>{this.props.description}</p>
         <Paper style={styles.tab} zDepth={1}>
-          <Tabs>
-            <Tab style={styles.document} label="Document" value="DOCUMENT" onClick={this.props.onTypeChange}>
+          <Tabs value={this.props.tabType}>
+            <Tab style={styles.document} label="Document" value="DOCUMENT" onActive={this.props.onTypeChange}>
               <APIDocument />
             </Tab>
-            <Tab style={styles.tester} label="Tester" value="TESTER" onClick={this.props.onTypeChange}>
+            <Tab style={styles.tester} label="Tester" value="TESTER" onActive={this.props.onTypeChange}>
               <APITester />
             </Tab>
           </Tabs>
