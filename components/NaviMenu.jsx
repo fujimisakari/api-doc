@@ -23,14 +23,14 @@ NestedListWrapper.propTypes = {
   children: PropTypes.node,
 };
 
-const NaviMenu = ({ urlGroupList, pathname }) => {
+const NaviMenu = ({ urlGroups, pathname }) => {
   let urlGroupName = '';
   const pathList = pathname.split('/');
   if (pathList.length > 1 && pathList[1] === 'api') {
     urlGroupName = pathList[2];
   }
 
-  const apiMethodList = urlGroupList.map(urlGroup => (
+  const apiMethodList = urlGroups.map(urlGroup => (
     <ListItem
       key={urlGroup.name}
       style={styles.parentList}
@@ -41,7 +41,7 @@ const NaviMenu = ({ urlGroupList, pathname }) => {
       className="naviItemList"
       nestedItems={urlGroup.urls.map(url =>
         <NestedListWrapper key={url}>
-          <Link to={`/api/${urlGroup.group}/${url}`}>
+          <Link to={`/api/${urlGroup.name}/${url}`}>
             <ListItem
               style={(pathname === `/api/${urlGroup.name}/${url}`) ? styles.activeChildList : styles.childList}
               primaryText={url}
@@ -73,7 +73,7 @@ const NaviMenu = ({ urlGroupList, pathname }) => {
 };
 
 NaviMenu.propTypes = {
-  urlGroupList: PropTypes.array.isRequired,
+  urlGroups: PropTypes.array.isRequired,
   pathname: PropTypes.string.isRequired,
 };
 
