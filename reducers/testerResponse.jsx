@@ -5,6 +5,6 @@ export default function testerResponse(state = { requestURL: '', data: {} }, act
     case TESTER_RESPONSE:
       return Object.assign({}, state, { requestURL: action.requestURL, data: action.resoponseData });
     default:
-      return state;
+      return { requestURL: '', data: {} };
   }
 }

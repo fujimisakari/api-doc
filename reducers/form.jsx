@@ -1,4 +1,4 @@
-import { UPDATE_FORM } from '../constants';
+import { UPDATE_FORM, TESTER_RESPONSE } from '../constants';
 
 export default function form(state = {}, action) {
   switch (action.type) {
@@ -7,8 +7,9 @@ export default function form(state = {}, action) {
       newState[action.name] = action.value;
       return newState;
     }
-    default: {
+    case TESTER_RESPONSE:
       return state;
-    }
+    default:
+      return {};
   }
 }
