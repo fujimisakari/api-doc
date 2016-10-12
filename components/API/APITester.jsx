@@ -42,7 +42,9 @@ class APITester extends Component {
       responseBlock = (
         <div>
           <h2 style={styles.headline}>Response</h2>
-          <code>{API_URL_DOMAIN}{this.props.requestURL}</code>
+          <p>
+            <code>{this.props.httpMethod}</code> : <code>{API_URL_DOMAIN}{this.props.requestURL}</code>
+          </p>
           <pre>
             {responseJson}
           </pre>
@@ -96,6 +98,7 @@ class APITester extends Component {
 
 APITester.propTypes = {
   requestSchema: React.PropTypes.object.isRequired,
+  httpMethod: React.PropTypes.string.isRequired,
   response: React.PropTypes.object.isRequired,
   requestURL: React.PropTypes.string.isRequired,
   hasAPISchemaData: React.PropTypes.bool.isRequired,

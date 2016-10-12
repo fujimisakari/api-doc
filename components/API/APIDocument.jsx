@@ -40,7 +40,7 @@ class APIDocument extends Component {
       <div style={styles.frame}>
         <h2 style={styles.headline}>URL</h2>
         <p>
-          This method has the URL <code>{url}</code>
+          <code>{this.props.httpMethod}</code> : <code>{url}</code>
         </p>
 
         <h2 style={styles.headline}>Arguments</h2>
@@ -76,6 +76,7 @@ class APIDocument extends Component {
 
 APIDocument.propTypes = {
   url: React.PropTypes.string.isRequired,
+  httpMethod: React.PropTypes.string.isRequired,
   requestSchema: React.PropTypes.object.isRequired,
   responseSchema: React.PropTypes.object.isRequired,
   hasAPISchemaData: React.PropTypes.bool.isRequired,

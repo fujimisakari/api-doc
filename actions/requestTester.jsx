@@ -19,7 +19,7 @@ function createParamData(inputFormData, argumentList) {
   const paramData = {};
   for (const argument of argumentList) {
     if (argument.name in inputFormData) {
-      paramData[argument.name] = inputFormData[argument.name];
+      paramData[argument.name] = inputFormData[argument.name].trim();
     } else {
       paramData[argument.name] = '';
     }
@@ -43,11 +43,12 @@ function addQueryDataTo(requestURL, paramData) {
   return requestURL;
 }
 
-export default function request(method = 'get') {
+export default function request() {
   return (dispatch, getState) => {
     const state = getState();
     const url = getURL(state);
     const schemaData = state.apiSchema.schemaData[url];
+    const httpMethod = schemaData.method.toLowerCase();
     const tmpParammData = createParamData(state.form, schemaData.requestSchema.arguments);
 
     let paramData = {};
@@ -62,12 +63,12 @@ export default function request(method = 'get') {
       }
     }
 
-    if (method === 'get') {
+    if (httpMethod === 'get') {
       requestURL = addQueryDataTo(requestURL, paramData);
       paramData = {};
     }
 
-    return makeRequest(method, requestURL, paramData)
+    return makeRequest(httpMethod, requestURL, paramData)
       .then(response => dispatch(requestCallback(requestURL, response.data)))
       .catch(error => console.log(error));
   };
